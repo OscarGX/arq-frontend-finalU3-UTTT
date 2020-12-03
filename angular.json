@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "final-arq-soft"
+    }
+  },
+  "defaultProject": "final-arq-soft",
+  "cli": {
+    "analytics": false
+  }
 }

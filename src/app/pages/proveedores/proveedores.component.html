@@ -1,0 +1,48 @@
+<div class="row mt-3">
+    <div class="col-md-12">
+        <h1 class="text-center">Proveedores</h1>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-md-4">
+        <a routerLink="/proveedor" class="btn btn-success">Nuevo proveedor<i class="fas fa-plus-circle ml-2"></i></a>
+    </div>
+</div>
+<div class="row mt-2">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert" *ngIf="isLoading">
+            <strong>Cargando información, espere... <i class="fas fa-spinner fa-spin ml-2   "></i> </strong>
+        </div>
+        <div class="table-responsive" *ngIf="!isLoading">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Área</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Teléfono</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Cotizar producto</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let proveedorItem of proveedores; let i = index;">
+                        <td>{{ proveedorItem.area }}</td>
+                        <td> {{ proveedorItem.name }} </td>
+                        <td> {{ proveedorItem.company }} </td>
+                        <td> {{ proveedorItem.address }} </td>
+                        <td> {{ proveedorItem.phoneNumber }} </td>
+                        <td> {{ proveedorItem.email }} </td>
+                        <td><button type="button" class="btn btn-warning cot" data-toggle="modal" data-target="#exampleModal"> <i class="fas fa-plus"></i> </button></td>
+                        <td>
+                            <button type="button" (click)="editarProveedor(proveedorItem._id)" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                            <button type="button" (click)="eliminarProveedor(proveedorItem._id, proveedorItem.name)" class="btn btn-danger ml-2"> <i class="far fa-trash-alt"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
