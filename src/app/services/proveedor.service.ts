@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import * as io from 'socket.io-client';
 import { environment } from '../../environments/environment';
-import { ProveedorI, ProveedorResponseI, ProveedoresResponseI, ProveedorDeleteResponseI, ProveedorCreateResponseI } from '../models/proveedores.interface';
+import { ProveedorI, ProveedoresResponseI, ProveedorDeleteResponseI, ProveedorCreateResponseI } from '../models/proveedores.interface';
 
 @Injectable({
   providedIn: 'root'
